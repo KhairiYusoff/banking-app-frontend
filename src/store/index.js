@@ -1,4 +1,4 @@
-import { createStore } from 'redux';
+import { configureStore } from 'redux';
 
 const counterReducer = (state = { counter: 0 }, action) => {
 
@@ -11,4 +11,6 @@ const counterReducer = (state = { counter: 0 }, action) => {
     return state;
 }
 
-const store = createStore();
+const store = configureStore(counterReducer);
+
+export default store;
