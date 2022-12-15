@@ -14,7 +14,7 @@ const Counter = () => {
       {showCounter && <div className={classes.value}>{counter}</div>}
       <div>
         <button onClick={() => dispatch(counterActions.increment())}>Increment</button>
-        <button onClick={() => dispatch(counterActions.increase(5))}>Increment by 5</button>
+        <button onClick={() => dispatch(counterActions.increase(10))}>Increment by 10</button>
         <button onClick={() => dispatch(counterActions.decrement())}>Decrement</button>
       </div>
       <button onClick={() => dispatch(counterActions.toggleCounter())}>Toggle Counter</button>
