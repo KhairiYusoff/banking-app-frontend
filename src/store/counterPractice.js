@@ -3,17 +3,23 @@ import { createSlice } from "@reduxjs/toolkit";
 const counterPractice = createSlice({
     name: 'counterpractice',
     initialState: {
-        count: 0
+        count: 10
     },
     reducers: {
         increment(state, action) {
-            state.count = state.count + 1
+            state.count++
+        },
+        incrementTen(state, action) {
+            state.count = state.count + action.payload
         },
         decrement(state, action) {
-            state.count = state.count - 1
+            state.count--
+        },
+        decrementTen(state, action) {
+            state.count = state.count + action.payload
         },
         reset(state, action) {
-            state.count = 0
+            state.count = 10
         }
     }
 })
