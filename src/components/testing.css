@@ -1,0 +1,12 @@
+.container {
+  height: 100vh;
+  background-color: lightblue;
+}
+
+#myDropdown {
+  /* style the dropdown menu */
+}
+
+#myDropdown option:checked {
+  background-color: lightsalmon;
+}

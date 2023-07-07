@@ -6,9 +6,15 @@ import authReducer from './auth';
 import counterPracticeReducer from './counterPractice';
 
 
-const store = configureStore({
-    reducer: { counter: counterReducer, auth: authReducer, counterPractice: counterPracticeReducer }
-});
+const store = configureStore(
+    {
+        reducer: {
+            counter: counterReducer,
+            auth: authReducer,
+            counterPractice: counterPracticeReducer
+        }
+    }
+);
 
 
 export default store;
