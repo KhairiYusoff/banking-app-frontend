@@ -5,7 +5,6 @@ import { counterActions } from '../store/counter';
 const Counter = () => {
 
   const counter = useSelector(state => state.counter.counter);
-  console.log(counter)
   const showCounter = useSelector(state => state.counter.showCounter);
   const dispatch = useDispatch();
 
