@@ -1,15 +1,20 @@
+import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { login } from '../../features/auth/authActions';
+import { selectAuthLoading, selectAuthError } from '../../features/auth/authSelectors';
 import classes from './Auth.module.css';
-import { useDispatch } from 'react-redux';
-import { authActions } from '../../store/auth';
 
 const Auth = () => {
-
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const dispatch = useDispatch();
+  const loading = useSelector(selectAuthLoading);
+  const error = useSelector(selectAuthError);
 
   const loginHandler = (e) => {
     e.preventDefault();
-    dispatch(authActions.login())
-  }
+    dispatch(login(email, password));
+  };
 
   return (
     <main className={classes.auth}>
@@ -17,13 +22,28 @@ const Auth = () => {
         <form onSubmit={loginHandler}>
           <div className={classes.control}>
             <label htmlFor='email'>Email</label>
-            <input type='email' id='email' />
+            <input
+              type='email'
+              id='email'
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
           </div>
           <div className={classes.control}>
             <label htmlFor='password'>Password</label>
-            <input type='password' id='password' />
+            <input
+              type='password'
+              id='password'
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
           </div>
-          <button>Login</button>
+          {error && <p className={classes.error}>{error}</p>}
+          <button disabled={loading}>
+            {loading ? 'Logging in...' : 'Login'}
+          </button>
         </form>
       </section>
     </main>

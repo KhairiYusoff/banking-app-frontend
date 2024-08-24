@@ -1,17 +1,17 @@
+import { useSelector } from 'react-redux';
+import { selectIsAuthenticated } from './features/auth/authSelectors';
 import Auth from './components/Auth/Auth';
 import Header from './components/Header/Header';
 import UserProfile from './components/UserProfile/UserProfile';
-import { useSelector } from 'react-redux';
 
 function App() {
-
-  const showUser = useSelector(state => state.auth.isAuthenticated);
+  const isAuthenticated = useSelector(selectIsAuthenticated);
 
   return (
     <>
       <Header />
-      {!showUser && <Auth />}
-      {showUser && <UserProfile />}
+      {!isAuthenticated && <Auth />}
+      {isAuthenticated && <UserProfile />}
     </>
   );
 }
