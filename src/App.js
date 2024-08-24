@@ -1,6 +1,6 @@
-import Auth from './components/Auth';
-import Header from './components/Header';
-import UserProfile from './components/UserProfile';
+import Auth from './components/Auth/Auth';
+import Header from './components/Header/Header';
+import UserProfile from './components/UserProfile/UserProfile';
 import { useSelector } from 'react-redux';
 
 function App() {
