@@ -1,29 +1,21 @@
-import { useSelector } from 'react-redux';
-import { selectIsAuthenticated } from './features/auth/authSelectors';
-import Auth from './components/Auth/Auth';
-import Header from './components/Header/Header';
-import UserProfile from './components/UserProfile/UserProfile';
-import AccountsList from './components/Accounts/AccountsList';
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { Layout } from 'antd';
+import Header from './components/Header/Header';
+import AppRoutes from './routes/AppRoutes';
 
 const { Content } = Layout;
 
 function App() {
-  const isAuthenticated = useSelector(selectIsAuthenticated);
-
   return (
-    <Layout>
-      <Header />
-      <Content style={{ padding: '50px' }}>
-        {!isAuthenticated && <Auth />}
-        {isAuthenticated && (
-          <>
-            <UserProfile />
-            <AccountsList />
-          </>
-        )}
-      </Content>
-    </Layout>
+    <Router>
+      <Layout style={{ minHeight: '100vh' }}>
+        <Header />
+        <Content style={{ padding: '50px' }}>
+          <AppRoutes />
+        </Content>
+      </Layout>
+    </Router>
   );
 }
 
