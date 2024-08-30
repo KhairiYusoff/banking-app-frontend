@@ -2,13 +2,13 @@ import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectIsAuthenticated } from '../features/auth/authSelectors';
-import Auth from '../components/Auth/Auth';
-import Dashboard from '../components/Dashboard/Dashboard';
-import AccountsList from '../components/Accounts/AccountsList';
-import TransactionHistory from '../components/Transactions/TransactionHistory';
-import TransferMoney from '../components/Transfers/TransferMoney';
-import BillPayments from '../components/Bills/BillPayments';
-import UserSettings from '../components/UserSettings/UserSettings';
+import Auth from './Auth/Auth';
+import Dashboard from './Dashboard/Dashboard';
+import AccountsList from './Accounts/AccountsList';
+import TransactionHistory from './Transactions/TransactionHistory';
+import TransferMoney from './Transfers/TransferMoney';
+import BillPayments from './Bills/BillPayments';
+import UserSettings from './UserSettings/UserSettings';
 
 const AppRoutes = () => {
   const isAuthenticated = useSelector(selectIsAuthenticated);
