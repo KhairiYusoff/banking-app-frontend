@@ -1,4 +1,5 @@
 import { userAccounts } from '../data/dummyData';
+import api from '../services/api';
 
 export const authenticateUser = async (email, password) => {
     // Simulate API call
@@ -16,9 +17,20 @@ export const fetchUserAccounts = async () => {
     // Simulate potential server-side processing or filtering
     const processedAccounts = userAccounts.map(account => ({
         ...account,
-        balance: parseFloat(account.balance.toFixed(2)), // Ensure balance is always to 2 decimal places
-        lastUpdated: new Date().toISOString() // Add a lastUpdated field
+        balance: parseFloat(account.balance.toFixed(2)),
+        lastUpdated: new Date().toISOString()
     }));
 
     return processedAccounts;
 };
+
+
+// export const authenticateUser = async (email, password) => {
+//   const response = await api.post('/auth/login', { email, password });
+//   return response.data;
+// };
+
+// export const fetchUserAccounts = async () => {
+//   const response = await api.get('/accounts');
+//   return response.data;
+// };
