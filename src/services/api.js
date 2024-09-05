@@ -5,6 +5,7 @@ const api = axios.create({
     baseURL: API_BASE_URL,
 });
 
+// Set the Authorization token for authenticated API requests
 export const setAuthToken = (token) => {
     if (token) {
         api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
