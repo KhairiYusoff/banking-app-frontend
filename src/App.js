@@ -9,7 +9,7 @@ const { Content } = Layout;
 function App() {
   return (
     <Router>
-      <Layout style={{ minHeight: '100vh' }}>
+      <Layout style={{ height: '100vh' }}>
         <Header />
         <Content style={{ padding: '50px' }}>
           <AppRoutes />
