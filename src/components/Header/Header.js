@@ -29,7 +29,7 @@ const Header = () => {
   return (
     <AntHeader>
       <div className="logo" style={{ color: 'white', float: 'left' }}>
-        <Link to="/" style={{ color: 'white' }}>MayBank</Link>
+        <Link to="/" style={{ color: 'white' }}>myBank</Link>
       </div>
       {isAuthenticated && (
         <Menu theme="dark" mode="horizontal" selectable={false}>
